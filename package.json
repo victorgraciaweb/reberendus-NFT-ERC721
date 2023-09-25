@@ -1,0 +1,15 @@
+{
+  "name": "reberendus-nft-erc721",
+  "version": "1.0.0",
+  "description": "Dapp developed with Solidity, Next, Ganache and Hardhat in Ethereum blockchain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Víctor Gracia",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.17.3"
+  }
+}
