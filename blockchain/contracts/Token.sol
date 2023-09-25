@@ -5,9 +5,9 @@ pragma solidity ^0.8.19;
 import "hardhat/console.sol";
 
 // Importation OpenZeppelin
-import "@openzeppelin/contracts@4.4.2/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts@4.4.2/access/Ownable.sol";
-import "@openzeppelin/contracts@4.4.2/utils/Counters.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract Token is ERC721, Ownable {
 

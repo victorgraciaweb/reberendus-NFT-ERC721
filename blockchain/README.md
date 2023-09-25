@@ -8,7 +8,7 @@ How to run?
 
    `npm install`
 
-2. Compile Smart Contracts (With or Without clean cache)
+2. Compile Smart Contracts (With or Without force compile again Smart Contract)
 
    `npx hardhat compile` or `npx hardhat compile --force`
 
@@ -23,6 +23,17 @@ Deploy contracts in Local Network Hardhat
 
    `npx hardhat run --network localhost scripts/deploy.ts`
 
+For stop hardhat node
+--
+
+1. Install kill-port
+
+   `npm i kill-port`
+
+2. Stop node (If it was up in 8545 port)
+
+   `npx kill-port 8545`
+
 Deploy Smart Contracts in other networks
 --
 
@@ -30,8 +41,14 @@ Deploy Smart Contracts in other networks
 
    `npx hardhat run --network <your-network> scripts/deploy.js`
 
-Testing
+Testing all Smart Contracts
 --
-1. Testing Smart Contracts
+1. Testing all
 
-   ``
+   `npx hardhat test`
+
+Testing only 1 Smart Contract
+--
+1. Testing only 1 file
+
+   `npx hardhat test <location-file-name>`
