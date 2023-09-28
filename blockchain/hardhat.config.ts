@@ -5,7 +5,7 @@ const config: HardhatUserConfig = {
   //defaultNetwork: "hardhat",
   networks: {
     ganache: {
-      url: "http://127.0.0.1:8545"
+      url: "http://127.0.0.1:7545"
     },
     hardhat: {
       // See its defaults
