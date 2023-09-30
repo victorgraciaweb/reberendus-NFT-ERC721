@@ -3,7 +3,7 @@ import styles from './page.module.css'
 import React, { useEffect, useState } from 'react'
 import getWeb3 from '../utils/web3Config'
 import Web3 from 'web3';
-
+import smartContract from './abis/Token.json';
 
 export default function Home() {
   const [web3, setWeb3] = useState<Web3 | null>(null);
@@ -14,6 +14,14 @@ export default function Home() {
     try {
       const web3Instance = await getWeb3();
       setWeb3(web3Instance);
+
+      const accounts = await web3Instance!.eth.getAccounts();
+      console.log('accounts: ', accounts);
+      const networkId = await web3Instance!.eth.net.getId()
+      console.log('networkId: ',networkId);
+
+      // const networkData = smartContract.networks[networkId]
+      // console.log('NetworkData:', networkData)
     } catch (error) {
       console.error('Error initializing web3:', error);
     }
@@ -34,7 +42,7 @@ export default function Home() {
             <div>
               <p>Web3 instance is ready!</p>
               
-              <p>test: {web3.config.defaultBlock.toString()}</p>
+              {/* <p>test: {web3.wallet}</p> */}
             </div>
           ) : (
             <p>Loading web3...</p>
