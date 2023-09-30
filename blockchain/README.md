@@ -39,7 +39,7 @@ Deploy Smart Contracts in other networks
 
 1. Deploy Smart Contracts
 
-   `npx hardhat run --network <your-network> scripts/deploy.js`
+   `npx hardhat run --network <your-network> scripts/deploy.ts`
 
 Testing all Smart Contracts
 --
