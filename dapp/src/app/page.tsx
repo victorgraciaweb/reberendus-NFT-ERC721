@@ -3,7 +3,7 @@ import styles from './page.module.css'
 import React, { useEffect, useState } from 'react'
 import getWeb3 from '../utils/web3Config'
 import Web3 from 'web3';
-import smartContract from './abis/Token.json';
+import smartContract from './contracts/Token.json';
 
 export default function Home() {
   const [web3, setWeb3] = useState<Web3 | null>(null);
@@ -19,6 +19,17 @@ export default function Home() {
       console.log('accounts: ', accounts);
       const networkId = await web3Instance!.eth.net.getId()
       console.log('networkId: ',networkId);
+
+      const abi = smartContract.abi;
+      console.log('abi', abi);
+      const contract = new web3Instance!.eth.Contract(abi, '0x5FbDB2315678afecb367f032d93F642f64180aa3');
+      // 0x5FbDB2315678afecb367f032d93F642f64180aa3
+      console.log(contract);
+      const fee = await contract.methods.name().call();
+      console.log('fee', fee);
+      // const name = await contract.methods.name().call();
+      // console.log('name', name);
+      // this.setState({ contract })
 
       // const networkData = smartContract.networks[networkId]
       // console.log('NetworkData:', networkData)
